@@ -12,7 +12,12 @@ const PORT = 8000;
 dotenv.config();
 
 const app = express();
-app.use(cors());
+const corsConfig = {
+    origin : "*",
+    credential: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+};
+app.use(cors(corsConfig));
 app.use(bodyParser.json({extended:true}))
 app.use(bodyParser.urlencoded({extended:true}))
 
