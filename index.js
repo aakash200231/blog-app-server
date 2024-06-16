@@ -17,13 +17,14 @@ const corsConfig = {
     credential: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
 };
+app.options("",cors(corsConfig));
 app.use(cors(corsConfig));
 app.use(bodyParser.json({extended:true}))
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.use('/',Router);
 
-//545454
+
 
 
 const USERNAME = process.env.DB_USERNAME;
